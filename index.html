@@ -3,389 +3,617 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#842f43">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#247F7C">
+<meta name="description" content="Alê Bólos: doces feitos com carinho. Escolha seus sabores e faça sua encomenda.">
 <title>Alê Bólos | Encomendas</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+
 <style>
 :root {
-  --vinho:#842f43;
-  --escuro:#51241e;
-  --fundo:#fff1ec;
-  --rosa:#f8d7de;
+  --turquesa: #247F7C;
+  --turquesa-escuro: #196764;
+  --menta: #D9F2EC;
+  --baunilha: #FFF9F1;
+  --morango: #E77E91;
+  --morango-escuro: #D8647C;
+  --chocolate: #51392F;
+  --texto-suave: #78645B;
+  --borda: #EADDD2;
+  --branco: #FFFFFF;
+  --sombra: 0 8px 28px rgba(81,57,47,.07);
 }
-* { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  margin:0;
-  background:var(--fundo);
-  color:var(--escuro);
-  font-family:Arial,sans-serif;
-  -webkit-text-size-adjust:100%;
+  margin: 0;
+  background: var(--baunilha);
+  color: var(--chocolate);
+  font-family: "DM Sans", Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
 }
-button,input,select,textarea { font:inherit; }
-button { cursor:pointer;touch-action:manipulation; }
-button:disabled { opacity:.55;cursor:not-allowed; }
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+button:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+}
+
 header {
-  background:linear-gradient(120deg,#55201d,#913d51);
-  color:#fff;
-  padding:23px 15px;
-  text-align:center;
+  background: linear-gradient(125deg, #D9F2EC, #FDEAE1);
+  color: var(--chocolate);
+  padding: 26px 15px;
+  text-align: center;
+  border-bottom: 2px solid #C2E8DF;
 }
-header h1 { font-size:30px;margin:0; }
-header p { margin:8px 0 0;font-size:14px; }
+
+header h1 {
+  font-family: "Nunito", Arial, sans-serif;
+  font-weight: 900;
+  font-size: 34px;
+  color: var(--turquesa);
+  margin: 0;
+  letter-spacing: -.6px;
+}
+
+header p {
+  color: var(--texto-suave);
+  font-size: 14px;
+  margin: 7px 0 0;
+}
+
 main {
-  max-width:1160px;
-  margin:20px auto;
-  padding:0 14px;
-  display:grid;
-  grid-template-columns:1.08fr 1fr;
-  gap:18px;
-  align-items:start;
+  max-width: 1160px;
+  margin: 20px auto;
+  padding: 0 14px;
+  display: grid;
+  grid-template-columns: 1.08fr 1fr;
+  gap: 18px;
+  align-items: start;
 }
+
 section {
-  min-width:0;
-  background:#fffaf6;
-  border-radius:18px;
-  padding:20px;
-  box-shadow:0 4px 18px #5020200b;
+  min-width: 0;
+  background: var(--branco);
+  border: 1px solid #F1E7DF;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: var(--sombra);
 }
-h2 { font-size:23px;margin:0 0 16px; }
+
+h2,
+h3,
+h4 {
+  font-family: "Nunito", Arial, sans-serif;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 900;
+  margin: 0 0 16px;
+  color: var(--chocolate);
+}
+
 h3 {
-  margin:22px 0 13px;
-  background:var(--vinho);
-  color:white;
-  border-radius:11px;
-  padding:12px;
-  font-size:17px;
+  margin: 22px 0 13px;
+  background: var(--menta);
+  color: var(--turquesa-escuro);
+  border-radius: 12px;
+  padding: 13px 15px;
+  font-size: 18px;
+  font-weight: 900;
 }
+
 .produtos {
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:11px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
 }
+
 .produto {
-  min-width:0;
-  border:1px solid #efd2c9;
-  background:#fff;
-  border-radius:15px;
-  padding:10px;
-  text-align:center;
+  min-width: 0;
+  background: #FFFFFF;
+  border: 1px solid var(--borda);
+  border-radius: 17px;
+  padding: 11px;
+  text-align: center;
+  transition: box-shadow .2s ease;
 }
+
 .produto img {
-  width:100%;
-  height:155px;
-  object-fit:cover;
-  border-radius:10px;
-  display:block;
-  background:#fff0e8;
+  width: 100%;
+  height: 155px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  background: #FFF0E8;
 }
+
 .produto h4 {
-  margin:10px 0 6px;
-  font-size:16px;
+  margin: 11px 0 6px;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1.25;
 }
+
 .produto p {
-  color:#96695d;
-  font-size:13px;
-  line-height:1.4;
-  min-height:36px;
-  margin:0 0 10px;
+  color: var(--texto-suave);
+  font-size: 13px;
+  line-height: 1.5;
+  min-height: 39px;
+  margin: 0 0 10px;
 }
+
 .preco {
-  color:var(--vinho);
-  font-weight:bold;
-  font-size:17px;
+  color: var(--turquesa);
+  font-family: "Nunito", Arial, sans-serif;
+  font-size: 19px;
+  font-weight: 900;
 }
+
 .contador {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:13px;
-  margin-top:12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+  margin-top: 12px;
 }
+
 .contador button {
-  border:0;
-  border-radius:12px;
-  background:#df4565;
-  color:#fff;
-  width:46px;
-  height:46px;
-  font-size:25px;
-  font-weight:bold;
+  border: 0;
+  background: var(--morango);
+  color: #FFFFFF;
+  border-radius: 12px;
+  width: 46px;
+  height: 46px;
+  font-family: "Nunito", Arial, sans-serif;
+  font-size: 27px;
+  font-weight: 900;
 }
+
+.contador button:active {
+  background: var(--morango-escuro);
+}
+
 .contador strong {
-  min-width:24px;
-  font-size:19px;
+  min-width: 24px;
+  font-family: "Nunito", Arial, sans-serif;
+  font-size: 20px;
 }
-.indisponivel { opacity:.65; }
+
+.indisponivel {
+  opacity: .68;
+}
+
 .etiqueta {
-  display:inline-block;
-  background:#f8d7de;
-  color:var(--vinho);
-  padding:7px 10px;
-  border-radius:8px;
-  margin-top:10px;
-  font-size:12px;
-  font-weight:bold;
+  display: inline-block;
+  background: #F6E7E8;
+  color: #94676F;
+  padding: 7px 11px;
+  border-radius: 9px;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 700;
 }
+
 .aviso {
-  background:#fff0dc;
-  border-left:4px solid #b97931;
-  border-radius:10px;
-  padding:13px;
-  font-size:14px;
-  line-height:1.5;
-  margin:14px 0;
+  background: #FFF2E1;
+  border-left: 4px solid #D49A53;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 14px 0;
 }
+
 .aviso.aberta {
-  background:#eaf7ed;
-  border-color:#3d8b58;
+  background: #EAF8F0;
+  border-color: #4EAB85;
+  color: #285E49;
 }
+
 .aviso.fechada {
-  background:#fff0dc;
-  border-color:#b44a4a;
+  background: #FFF0EB;
+  border-color: #C77768;
 }
+
 #carrinho {
-  line-height:1.6;
-  padding:6px 0 12px;
+  line-height: 1.7;
+  padding: 7px 0 14px;
+  color: var(--texto-suave);
 }
+
 .total {
-  background:var(--rosa);
-  border-radius:13px;
-  padding:17px;
-  font-size:22px;
-  font-weight:bold;
-  text-align:center;
+  background: var(--menta);
+  color: var(--turquesa-escuro);
+  border-radius: 14px;
+  padding: 17px;
+  font-family: "Nunito", Arial, sans-serif;
+  font-size: 23px;
+  font-weight: 900;
+  text-align: center;
 }
+
 label {
-  display:block;
-  font-size:14px;
-  font-weight:bold;
-  margin:15px 0 6px;
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 15px 0 7px;
 }
-input,select,textarea {
-  display:block;
-  width:100%;
-  min-height:48px;
-  border:1px solid #dfbeb4;
-  border-radius:10px;
-  padding:12px;
-  background:#fff;
-  color:#38221d;
-  font-size:16px;
+
+input,
+select,
+textarea {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  background: #FFFFFF;
+  border: 1px solid #D8CEC4;
+  border-radius: 11px;
+  padding: 12px;
+  color: var(--chocolate);
+  font-size: 16px;
 }
-textarea { resize:vertical; }
-input:focus,select:focus,textarea:focus {
-  outline:2px solid #b96b80;
-  outline-offset:1px;
+
+textarea {
+  resize: vertical;
 }
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #79C8BD;
+  outline-offset: 1px;
+  border-color: var(--turquesa);
+}
+
 .linha {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
-#entrega { background:#fff5ee; }
-small { color:#806a60;line-height:1.5; }
-#areaEndereco,#areaMotoboy { display:none; }
+
+#entrega {
+  background: #F0FAF7;
+  color: var(--turquesa-escuro);
+  font-weight: 700;
+}
+
+small {
+  color: var(--texto-suave);
+  line-height: 1.5;
+}
+
+#areaEndereco,
+#areaMotoboy {
+  display: none;
+}
+
 .acao {
-  width:100%;
-  min-height:52px;
-  padding:13px;
-  margin-top:15px;
-  border:0;
-  border-radius:12px;
-  background:var(--vinho);
-  color:#fff;
-  font-size:16px;
-  font-weight:bold;
+  display: block;
+  width: 100%;
+  min-height: 52px;
+  padding: 13px;
+  margin-top: 15px;
+  background: var(--turquesa);
+  color: #FFFFFF;
+  border: 0;
+  border-radius: 12px;
+  font-family: "Nunito", Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 900;
 }
+
+.acao:not(:disabled):active {
+  background: var(--turquesa-escuro);
+}
+
 .secundario {
-  background:#fff;
-  color:var(--vinho);
-  border:1px solid var(--vinho);
+  background: #FFFFFF;
+  color: var(--turquesa);
+  border: 1.5px solid var(--turquesa);
 }
+
+.secundario:not(:disabled):active {
+  background: var(--menta);
+}
+
 .pix {
-  background:#f9edf0;
-  border-radius:14px;
-  text-align:center;
-  padding:16px;
-  margin-top:20px;
+  background: #EAF7F4;
+  border: 1px solid #D2EDE5;
+  border-radius: 16px;
+  text-align: center;
+  padding: 17px;
+  margin-top: 21px;
 }
+
+.pix h2 {
+  color: var(--turquesa-escuro);
+}
+
+.pix strong {
+  color: var(--chocolate);
+}
+
+.pix small {
+  display: block;
+  margin-top: 8px;
+}
+
 #situacao {
-  margin-top:12px;
-  font-size:14px;
-  line-height:1.5;
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.5;
 }
+
 footer {
-  text-align:center;
-  font-size:13px;
-  padding:20px 12px 110px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--texto-suave);
+  padding: 20px 12px 110px;
 }
 
-/* Carrinho fixo no celular */
-#barraMobile { display:none; }
+#barraMobile {
+  display: none;
+}
 
-/* Janela de confirmação */
 .modalFundo {
-  position:fixed;
-  inset:0;
-  z-index:9999;
-  background:rgba(37,17,19,.72);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:14px;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(34, 47, 44, .67);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
 }
-.modalFundo.visivel { display:flex; }
-.modal {
-  background:#fffaf6;
-  width:min(450px,100%);
-  max-height:calc(100dvh - 28px);
-  overflow:auto;
-  border-radius:21px;
-  padding:24px 20px;
-  text-align:center;
-  box-shadow:0 20px 80px #0005;
-}
-.modal .simbolo { font-size:44px; }
-.modal h2 { margin:12px 0; }
-.modal p { line-height:1.55; }
-.numeroPedido {
-  background:#f6e4e6;
-  border-radius:12px;
-  padding:14px 10px;
-  margin:14px 0;
-  font-size:18px;
-  font-weight:bold;
-  overflow-wrap:anywhere;
-}
-.avaliacao {
-  display:none;
-  border-top:1px solid #eacbd0;
-  margin-top:17px;
-  padding-top:16px;
-}
-.avaliacao h3 {
-  background:none;
-  color:var(--escuro);
-  padding:0;
-  margin:0 0 9px;
-  font-size:17px;
-}
-.estrelas {
-  display:flex;
-  justify-content:center;
-  gap:4px;
-  margin:12px 0;
-}
-.estrela {
-  border:0;
-  background:transparent;
-  color:#b9b2b0;
-  font-size:37px;
-  line-height:1;
-  padding:6px;
-  min-width:48px;
-  min-height:50px;
-}
-.estrela.ativa { color:#e5a52a; }
-#mensagemAvaliacao {
-  font-size:13px;
-  color:#806a60;
-  min-height:20px;
-}
-body.modalAberto { overflow:hidden; }
 
-@media(max-width:780px) {
-  header { padding:18px 12px; }
-  header h1 { font-size:27px; }
+.modalFundo.visivel {
+  display: flex;
+}
+
+.modal {
+  background: #FFFFFF;
+  width: min(450px, 100%);
+  max-height: calc(100dvh - 28px);
+  overflow: auto;
+  border-radius: 22px;
+  padding: 25px 21px;
+  text-align: center;
+  box-shadow: 0 20px 80px #0003;
+}
+
+.modal .simbolo {
+  font-size: 46px;
+}
+
+.modal h2 {
+  margin: 12px 0;
+  color: var(--turquesa-escuro);
+}
+
+.modal p {
+  line-height: 1.6;
+}
+
+.numeroPedido {
+  background: var(--menta);
+  color: var(--turquesa-escuro);
+  border-radius: 12px;
+  padding: 14px 10px;
+  margin: 14px 0;
+  font-size: 17px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.avaliacao {
+  display: none;
+  border-top: 1px solid #E2EAE5;
+  margin-top: 17px;
+  padding-top: 17px;
+}
+
+.avaliacao h3 {
+  background: none;
+  color: var(--chocolate);
+  padding: 0;
+  margin: 0 0 9px;
+  font-size: 19px;
+}
+
+.estrelas {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin: 12px 0;
+}
+
+.estrela {
+  border: 0;
+  background: transparent;
+  color: #B9B2B0;
+  font-size: 37px;
+  line-height: 1;
+  padding: 6px;
+  min-width: 48px;
+  min-height: 50px;
+}
+
+.estrela.ativa {
+  color: #E5A52A;
+}
+
+#mensagemAvaliacao {
+  font-size: 13px;
+  color: var(--texto-suave);
+  min-height: 20px;
+}
+
+body.modalAberto {
+  overflow: hidden;
+}
+
+@media (max-width: 780px) {
+  header {
+    padding: 19px 12px;
+  }
+
+  header h1 {
+    font-size: 29px;
+  }
+
   main {
-    display:block;
-    margin:12px auto;
-    padding:0 10px;
+    display: block;
+    margin: 12px auto;
+    padding: 0 10px;
   }
+
   section {
-    padding:15px;
-    margin-bottom:13px;
-    border-radius:16px;
+    padding: 15px;
+    margin-bottom: 13px;
+    border-radius: 17px;
   }
-  .produtos { gap:9px; }
-  .produto { padding:8px; }
-  .produto img { height:140px; }
-  .produto h4 { font-size:15px; }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .produtos {
+    gap: 9px;
+  }
+
+  .produto {
+    padding: 8px;
+  }
+
+  .produto img {
+    height: 140px;
+  }
+
+  .produto h4 {
+    font-size: 15px;
+  }
+
   .produto p {
-    font-size:12px;
-    min-height:0;
+    font-size: 12px;
+    min-height: 0;
   }
-  .contador { gap:11px; }
+
+  .contador {
+    gap: 11px;
+  }
+
   .contador button {
-    width:48px;
-    height:48px;
+    width: 48px;
+    height: 48px;
   }
-  .linha { gap:9px; }
+
+  .linha {
+    gap: 9px;
+  }
 
   #barraMobile {
-    position:fixed;
-    bottom:0;
-    left:0;
-    right:0;
-    z-index:80;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:10px;
-    background:#fffaf6;
-    border-top:1px solid #e5c9c3;
-    box-shadow:0 -3px 18px #0002;
-    padding:10px 13px;
-    padding-bottom:max(
-      10px,env(safe-area-inset-bottom)
-    );
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 80;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: #FFFFFF;
+    border-top: 2px solid #D9F2EC;
+    box-shadow: 0 -4px 20px #00000013;
+    padding: 10px 13px;
+    padding-bottom: max(10px, env(safe-area-inset-bottom));
   }
+
   #barraMobile small {
-    display:block;
-    font-size:12px;
+    display: block;
+    font-size: 12px;
   }
+
   #totalMobile {
-    display:block;
-    color:var(--vinho);
-    font-size:22px;
-    margin:3px 0;
+    display: block;
+    color: var(--turquesa);
+    font-family: "Nunito", Arial, sans-serif;
+    font-size: 23px;
+    font-weight: 900;
+    margin: 3px 0;
   }
+
   #quantidadeMobile {
-    font-size:12px;
-    color:#806a60;
+    font-size: 12px;
+    color: var(--texto-suave);
   }
+
   #barraMobile button {
-    min-height:49px;
-    border:0;
-    border-radius:11px;
-    background:var(--vinho);
-    color:#fff;
-    padding:0 16px;
-    font-weight:bold;
-    font-size:15px;
+    min-height: 49px;
+    border: 0;
+    border-radius: 12px;
+    background: var(--turquesa);
+    color: #FFFFFF;
+    padding: 0 16px;
+    font-family: "Nunito", Arial, sans-serif;
+    font-weight: 900;
+    font-size: 15px;
   }
-  .modal { padding:21px 15px; }
+
+  .modal {
+    padding: 21px 15px;
+  }
 }
-@media(max-width:360px) {
-  .linha { grid-template-columns:1fr; }
-  .produto img { height:112px; }
+
+@media (max-width: 360px) {
+  .linha {
+    grid-template-columns: 1fr;
+  }
+
+  .produto img {
+    height: 112px;
+  }
+
   .estrela {
-    min-width:42px;
-    font-size:32px;
-    padding:4px;
+    min-width: 42px;
+    font-size: 32px;
+    padding: 4px;
   }
 }
 </style>
 </head>
 
 <body>
+
 <header>
-  <h1>🧸 Alê Bólos 🍰</h1>
-  <p>Feito com carinho, para adoçar seu dia</p>
+  <h1>🍰 Alê Bólos</h1>
+  <p>Um carinho em cada pote ❤️</p>
 </header>
 
 <main>
+
 <section>
   <h2>🍓 Nosso cardápio</h2>
 
@@ -428,9 +656,7 @@ body.modalAberto { overflow:hidden; }
       autocomplete="name"
     >
 
-    <label for="telefone">
-      WhatsApp com DDD *
-    </label>
+    <label for="telefone">WhatsApp com DDD *</label>
     <input
       id="telefone"
       required
@@ -440,14 +666,13 @@ body.modalAberto { overflow:hidden; }
       placeholder="(11) 99999-9999"
     >
 
-    <label for="entrega">
-      Previsão de atendimento
-    </label>
+    <label for="entrega">Previsão de atendimento</label>
     <input
       id="entrega"
       readonly
       placeholder="Consultando calendário..."
     >
+
     <small>
       Atendimento a partir das 18h da data indicada,
       conforme disponibilidade e confirmação.
@@ -456,6 +681,7 @@ body.modalAberto { overflow:hidden; }
     <label for="modalidade">
       Como deseja receber? *
     </label>
+
     <select id="modalidade" required>
       <option value="">Selecione</option>
       <option value="retirada">
@@ -485,6 +711,7 @@ body.modalAberto { overflow:hidden; }
             placeholder="00000-000"
           >
         </div>
+
         <div>
           <label for="numero">Número *</label>
           <input id="numero" maxlength="20">
@@ -501,24 +728,15 @@ body.modalAberto { overflow:hidden; }
           <label for="bairro">Bairro *</label>
           <input id="bairro" maxlength="100">
         </div>
+
         <div>
-          <label for="complemento">
-            Complemento
-          </label>
-          <input
-            id="complemento"
-            maxlength="100"
-          >
+          <label for="complemento">Complemento</label>
+          <input id="complemento" maxlength="100">
         </div>
       </div>
 
-      <label for="referencia">
-        Referência
-      </label>
-      <input
-        id="referencia"
-        maxlength="150"
-      >
+      <label for="referencia">Referência</label>
+      <input id="referencia" maxlength="150">
     </div>
 
     <div id="areaMotoboy">
@@ -531,6 +749,7 @@ body.modalAberto { overflow:hidden; }
       <label for="motoboy">
         Informações do motoboy
       </label>
+
       <textarea
         id="motoboy"
         rows="2"
@@ -543,6 +762,7 @@ body.modalAberto { overflow:hidden; }
     </div>
 
     <label for="obs">Observações</label>
+
     <textarea
       id="obs"
       rows="3"
@@ -596,6 +816,7 @@ body.modalAberto { overflow:hidden; }
     </small>
   </div>
 </section>
+
 </main>
 
 <div id="barraMobile">
@@ -610,7 +831,6 @@ body.modalAberto { overflow:hidden; }
   </button>
 </div>
 
-<!-- Janela de confirmação -->
 <div
   id="modalFundo"
   class="modalFundo"
@@ -619,9 +839,7 @@ body.modalAberto { overflow:hidden; }
   aria-labelledby="modalTitulo"
 >
   <div class="modal">
-    <div id="modalIcone" class="simbolo">
-      ⏳
-    </div>
+    <div id="modalIcone" class="simbolo">⏳</div>
 
     <h2 id="modalTitulo">
       Registrando pedido...
@@ -652,46 +870,14 @@ body.modalAberto { overflow:hidden; }
         role="group"
         aria-label="Avalie de 1 a 5 estrelas"
       >
-        <button
-          type="button"
-          class="estrela"
-          data-nota="1"
-          aria-label="1 estrela"
-        >★</button>
-
-        <button
-          type="button"
-          class="estrela"
-          data-nota="2"
-          aria-label="2 estrelas"
-        >★</button>
-
-        <button
-          type="button"
-          class="estrela"
-          data-nota="3"
-          aria-label="3 estrelas"
-        >★</button>
-
-        <button
-          type="button"
-          class="estrela"
-          data-nota="4"
-          aria-label="4 estrelas"
-        >★</button>
-
-        <button
-          type="button"
-          class="estrela"
-          data-nota="5"
-          aria-label="5 estrelas"
-        >★</button>
+        <button type="button" class="estrela" data-nota="1" aria-label="1 estrela">★</button>
+        <button type="button" class="estrela" data-nota="2" aria-label="2 estrelas">★</button>
+        <button type="button" class="estrela" data-nota="3" aria-label="3 estrelas">★</button>
+        <button type="button" class="estrela" data-nota="4" aria-label="4 estrelas">★</button>
+        <button type="button" class="estrela" data-nota="5" aria-label="5 estrelas">★</button>
       </div>
 
-      <div
-        id="mensagemAvaliacao"
-        aria-live="polite"
-      >
+      <div id="mensagemAvaliacao" aria-live="polite">
         Toque nas estrelas para avaliar.
       </div>
 
@@ -705,8 +891,8 @@ body.modalAberto { overflow:hidden; }
       </button>
 
       <small>
-        Avaliação opcional da experiência
-        de fazer o pedido no aplicativo.
+        Avaliação opcional da experiência de fazer
+        o pedido no aplicativo.
       </small>
     </div>
 
@@ -721,7 +907,6 @@ body.modalAberto { overflow:hidden; }
   </div>
 </div>
 
-<!-- Canais invisíveis de envio -->
 <iframe
   name="canalPedido"
   title="Envio do pedido"
@@ -768,23 +953,22 @@ const valor = id => el(id).value.trim();
 
 const dinheiro = n =>
   Number(n).toLocaleString("pt-BR", {
-    style:"currency",
-    currency:"BRL"
+    style: "currency",
+    currency: "BRL"
   });
 
 function dataBR(iso) {
-  if (
-    !/^\d{4}-\d{2}-\d{2}$/.test(iso || "")
-  ) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(iso || "")) {
     return "";
   }
 
-  const [ano,mes,dia] = iso.split("-");
+  const [ano, mes, dia] = iso.split("-");
   return dia + "/" + mes + "/" + ano;
 }
 
 function horaBR(h) {
   const s = String(h || "18:00");
+
   return s.endsWith(":00")
     ? s.slice(0, -3) + "h"
     : s.replace(":", "h");
@@ -807,9 +991,7 @@ function fotoUrl(foto) {
 
   if (/^https:\/\//i.test(f)) return f;
 
-  if (
-    /^[\w.-]+\.(jpg|jpeg|png|webp)$/i.test(f)
-  ) {
+  if (/^[\w.-]+\.(jpg|jpeg|png|webp)$/i.test(f)) {
     return f;
   }
 
@@ -842,9 +1024,7 @@ function atualizarBotao() {
 function desenharProduto(p, destino) {
   const card = elemento(
     "div",
-    "produto" + (
-      p.ativo ? "" : " indisponivel"
-    )
+    "produto" + (p.ativo ? "" : " indisponivel")
   );
 
   const img = elemento("img");
@@ -863,28 +1043,13 @@ function desenharProduto(p, destino) {
 
   if (!p.ativo) {
     card.appendChild(
-      elemento(
-        "span",
-        "etiqueta",
-        "Indisponível"
-      )
+      elemento("span", "etiqueta", "Indisponível")
     );
   } else {
-    const contador = elemento(
-      "div", "contador"
-    );
-
-    const menos = elemento(
-      "button", "", "−"
-    );
-
-    const mais = elemento(
-      "button", "", "+"
-    );
-
-    const num = elemento(
-      "strong", "", qtd[p.id] || 0
-    );
+    const contador = elemento("div", "contador");
+    const menos = elemento("button", "", "−");
+    const mais = elemento("button", "", "+");
+    const num = elemento("strong", "", qtd[p.id] || 0);
 
     menos.type = "button";
     mais.type = "button";
@@ -902,16 +1067,10 @@ function desenharProduto(p, destino) {
       "Adicionar " + p.nome
     );
 
-    menos.onclick = () =>
-      alterar(p.id, -1);
+    menos.onclick = () => alterar(p.id, -1);
+    mais.onclick = () => alterar(p.id, 1);
 
-    mais.onclick = () =>
-      alterar(p.id, 1);
-
-    contador.append(
-      menos, num, mais
-    );
-
+    contador.append(menos, num, mais);
     card.appendChild(contador);
   }
 
@@ -935,8 +1094,7 @@ function desenhar() {
     } else if (p.categoria === "bolo") {
       desenharProduto(p, bolos);
     } else {
-      const cat =
-        p.categoria || "Outros produtos";
+      const cat = p.categoria || "Outros produtos";
 
       if (!extras.has(cat)) {
         extras.set(cat, []);
@@ -947,18 +1105,10 @@ function desenhar() {
   });
 
   extras.forEach((lista, nome) => {
-    const titulo = elemento(
-      "h3", "", nome
-    );
+    const titulo = elemento("h3", "", nome);
+    const grade = elemento("div", "produtos");
 
-    const grade = elemento(
-      "div", "produtos"
-    );
-
-    lista.forEach(p =>
-      desenharProduto(p, grade)
-    );
-
+    lista.forEach(p => desenharProduto(p, grade));
     outras.append(titulo, grade);
   });
 
@@ -968,18 +1118,18 @@ function desenhar() {
 
   el("carrinho").textContent =
     escolhidos.length
-      ? escolhidos.map(p =>
-          qtd[p.id] + "x " + p.nome
+      ? escolhidos.map(
+          p => qtd[p.id] + "x " + p.nome
         ).join(" • ")
       : "Nenhum produto selecionado.";
 
   const subtotal = escolhidos.reduce(
-    (s,p) => s + qtd[p.id] * p.preco,
+    (s, p) => s + qtd[p.id] * p.preco,
     0
   );
 
   const unidades = escolhidos.reduce(
-    (s,p) => s + qtd[p.id],
+    (s, p) => s + qtd[p.id],
     0
   );
 
@@ -990,15 +1140,11 @@ function desenhar() {
     dinheiro(subtotal);
 
   el("quantidadeMobile").textContent =
-    unidades + (
-      unidades === 1 ? " item" : " itens"
-    );
+    unidades + (unidades === 1 ? " item" : " itens");
 }
 
 function alterar(id, delta) {
-  const p = produtos.find(
-    p => p.id === id
-  );
+  const p = produtos.find(p => p.id === id);
 
   if (
     !lojaAberta ||
@@ -1012,24 +1158,19 @@ function alterar(id, delta) {
 
   qtd[id] = Math.max(
     0,
-    Math.min(
-      30,
-      (qtd[id] || 0) + delta
-    )
+    Math.min(30, (qtd[id] || 0) + delta)
   );
 
   desenhar();
 }
 
 function jsonp(parametros) {
-  return new Promise((resolve,reject) => {
+  return new Promise((resolve, reject) => {
     const callback =
       "aleConsulta" +
       Math.random().toString(36).slice(2);
 
-    const script =
-      document.createElement("script");
-
+    const script = document.createElement("script");
     let finalizado = false;
 
     const tempo = setTimeout(() => {
@@ -1038,7 +1179,7 @@ function jsonp(parametros) {
       );
     }, 15000);
 
-    function finalizar(erro,dados) {
+    function finalizar(erro, dados) {
       if (finalizado) return;
 
       finalizado = true;
@@ -1050,28 +1191,19 @@ function jsonp(parametros) {
       else resolve(dados);
     }
 
-    window[callback] = dados =>
-      finalizar(null,dados);
+    window[callback] = dados => finalizar(null, dados);
 
     script.onerror = () =>
-      finalizar(
-        new Error("Falha na conexão.")
-      );
+      finalizar(new Error("Falha na conexão."));
 
     const url = new URL(SCRIPT_URL);
 
     Object.entries(parametros).forEach(
-      ([k,v]) =>
-        url.searchParams.set(k,v)
+      ([k, v]) => url.searchParams.set(k, v)
     );
 
-    url.searchParams.set(
-      "callback",callback
-    );
-
-    url.searchParams.set(
-      "_",Date.now()
-    );
+    url.searchParams.set("callback", callback);
+    url.searchParams.set("_", Date.now());
 
     script.src = url.toString();
     document.head.appendChild(script);
@@ -1084,9 +1216,7 @@ function aplicarCatalogo(d) {
     !d.sucesso ||
     !Array.isArray(d.produtos)
   ) {
-    throw new Error(
-      "Catálogo indisponível."
-    );
+    throw new Error("Catálogo indisponível.");
   }
 
   produtos.length = 0;
@@ -1108,16 +1238,14 @@ function aplicarCatalogo(d) {
 
     produtos.push({
       id,
-      nome:String(p.nome || ""),
-      categoria:String(
+      nome: String(p.nome || ""),
+      categoria: String(
         p.categoria || ""
       ).toLowerCase(),
       preco,
-      ativo:p.ativo === true,
-      foto:String(p.foto || ""),
-      descricao:String(
-        p.descricao || ""
-      )
+      ativo: p.ativo === true,
+      foto: String(p.foto || ""),
+      descricao: String(p.descricao || "")
     });
 
     if (!(id in qtd)) {
@@ -1135,13 +1263,8 @@ function aplicarCatalogo(d) {
     }
   });
 
-  dataDisponivel = String(
-    d.proximaData || ""
-  );
-
-  horario = String(
-    d.horarioLimite || "18:00"
-  );
+  dataDisponivel = String(d.proximaData || "");
+  horario = String(d.horarioLimite || "18:00");
 
   lojaAberta =
     d.aberta === true &&
@@ -1149,28 +1272,21 @@ function aplicarCatalogo(d) {
 
   catalogoCarregado = true;
 
-  const previsao =
-    dataBR(dataDisponivel);
-
-  const horarioTexto =
-    horaBR(horario);
+  const previsao = dataBR(dataDisponivel);
+  const horarioTexto = horaBR(horario);
 
   el("entrega").value =
     previsao
-      ? previsao +
-        ", a partir das " +
-        horarioTexto
+      ? previsao + ", a partir das " + horarioTexto
       : "Sem data disponível";
 
   const aviso = el("estadoLoja");
 
   aviso.className =
-    "aviso " +
-    (lojaAberta ? "aberta" : "fechada");
+    "aviso " + (lojaAberta ? "aberta" : "fechada");
 
   aviso.textContent = lojaAberta
-    ? "🍰 Encomendas abertas! " +
-      "Próxima previsão: " +
+    ? "🍰 Encomendas abertas! Próxima previsão: " +
       previsao +
       ", a partir das " +
       horarioTexto +
@@ -1192,7 +1308,7 @@ async function atualizarLoja() {
 
   try {
     const dados = await jsonp({
-      acao:"catalogo"
+      acao: "catalogo"
     });
 
     aplicarCatalogo(dados);
@@ -1209,9 +1325,7 @@ async function atualizarLoja() {
       "Não foi possível consultar o cardápio. " +
       "Pedidos bloqueados por segurança.";
 
-    el("situacao").textContent =
-      erro.message;
-
+    el("situacao").textContent = erro.message;
     return false;
 
   } finally {
@@ -1224,25 +1338,18 @@ function recebimento() {
   const m = valor("modalidade");
 
   el("areaEndereco").style.display =
-    m === "nossa"
-      ? "block"
-      : "none";
+    m === "nossa" ? "block" : "none";
 
   el("areaMotoboy").style.display =
-    m === "motoboy"
-      ? "block"
-      : "none";
+    m === "motoboy" ? "block" : "none";
 
-  [
-    "cep","rua","numero","bairro"
-  ].forEach(id => {
+  ["cep", "rua", "numero", "bairro"].forEach(id => {
     el(id).required = m === "nossa";
   });
 
   const avisos = {
     retirada:
-      "Retirada gratuita. " +
-      "O endereço será enviado " +
+      "Retirada gratuita. O endereço será enviado " +
       "individualmente após a confirmação.",
     motoboy:
       "Você contrata e paga seu motoboy. " +
@@ -1259,7 +1366,8 @@ function recebimento() {
 }
 
 el("modalidade").addEventListener(
-  "change", recebimento
+  "change",
+  recebimento
 );
 
 recebimento();
@@ -1270,13 +1378,11 @@ el("cep").addEventListener(
   "input",
   async function() {
     const cep = this.value
-      .replace(/\D/g,"")
-      .slice(0,8);
+      .replace(/\D/g, "")
+      .slice(0, 8);
 
     this.value = cep.length > 5
-      ? cep.slice(0,5) +
-        "-" +
-        cep.slice(5)
+      ? cep.slice(0, 5) + "-" + cep.slice(5)
       : cep;
 
     if (
@@ -1304,11 +1410,8 @@ el("cep").addEventListener(
 
       if (d.erro) throw new Error();
 
-      el("rua").value =
-        d.logradouro || "";
-
-      el("bairro").value =
-        d.bairro || "";
+      el("rua").value = d.logradouro || "";
+      el("bairro").value = d.bairro || "";
 
       el("cepstatus").textContent =
         (d.localidade || "") +
@@ -1330,7 +1433,7 @@ el("copiar").onclick = async () => {
     await navigator.clipboard.writeText(PIX);
     alert("Chave Pix copiada!");
   } catch (_) {
-    prompt("Copie a chave Pix:",PIX);
+    prompt("Copie a chave Pix:", PIX);
   }
 };
 
@@ -1340,14 +1443,14 @@ function textoWhatsApp() {
   );
 
   const total = itens.reduce(
-    (s,p) => s + qtd[p.id] * p.preco,
+    (s, p) => s + qtd[p.id] * p.preco,
     0
   );
 
   const modalidades = {
-    retirada:"Retirada no local",
-    motoboy:"Motoboy contratado pelo cliente",
-    nossa:"Entrega organizada pelos Alê Bólos"
+    retirada: "Retirada no local",
+    motoboy: "Motoboy contratado pelo cliente",
+    nossa: "Entrega organizada pelos Alê Bólos"
   };
 
   const m = valor("modalidade");
@@ -1372,24 +1475,20 @@ function textoWhatsApp() {
         valor("numero"),
       "*Bairro:* " + valor("bairro"),
       "*CEP:* " + valor("cep"),
-      "*Complemento:* " +
-        valor("complemento"),
-      "*Referência:* " +
-        valor("referencia"),
+      "*Complemento:* " + valor("complemento"),
+      "*Referência:* " + valor("referencia"),
       "*Frete:* aguardando cotação"
     );
   }
 
   if (m === "motoboy") {
     linhas.push(
-      "*Motoboy:* " +
-      valor("motoboy")
+      "*Motoboy:* " + valor("motoboy")
     );
   }
 
   linhas.push(
-    "*Observações:* " +
-    valor("obs")
+    "*Observações:* " + valor("obs")
   );
 
   return linhas.join("\n");
@@ -1400,9 +1499,7 @@ el("whatsapp").onclick = () => {
     "https://wa.me/" +
       WHATSAPP +
       "?text=" +
-      encodeURIComponent(
-        textoWhatsApp()
-      ),
+      encodeURIComponent(textoWhatsApp()),
     "_blank",
     "noopener"
   );
@@ -1410,17 +1507,14 @@ el("whatsapp").onclick = () => {
 
 el("irPedido").onclick = () => {
   el("secaoPedido").scrollIntoView({
-    behavior:"smooth",
-    block:"start"
+    behavior: "smooth",
+    block: "start"
   });
 };
 
 function abrirModal() {
-  el("modalFundo")
-    .classList.add("visivel");
-
-  document.body
-    .classList.add("modalAberto");
+  el("modalFundo").classList.add("visivel");
+  document.body.classList.add("modalAberto");
 
   el("modalIcone").textContent = "⏳";
 
@@ -1431,16 +1525,10 @@ function abrirModal() {
     "Estamos conferindo o registro " +
     "da sua encomenda.";
 
-  el("modalNumero").style.display =
-    "none";
-
+  el("modalNumero").style.display = "none";
   el("modalPrevisao").textContent = "";
-
-  el("areaAvaliacao").style.display =
-    "none";
-
-  el("fecharModal").style.display =
-    "none";
+  el("areaAvaliacao").style.display = "none";
+  el("fecharModal").style.display = "none";
 }
 
 function mostrarResultado(
@@ -1450,14 +1538,9 @@ function mostrarResultado(
   pedido,
   previsao
 ) {
-  el("modalTitulo").textContent =
-    titulo;
-
-  el("modalMensagem").textContent =
-    mensagem;
-
-  el("modalIcone").textContent =
-    icone;
+  el("modalTitulo").textContent = titulo;
+  el("modalMensagem").textContent = mensagem;
+  el("modalIcone").textContent = icone;
 
   el("modalNumero").style.display =
     pedido ? "block" : "none";
@@ -1470,8 +1553,7 @@ function mostrarResultado(
       ? "Previsão: " + previsao
       : "";
 
-  el("fecharModal").style.display =
-    "block";
+  el("fecharModal").style.display = "block";
 }
 
 function prepararAvaliacao() {
@@ -1479,11 +1561,8 @@ function prepararAvaliacao() {
   avaliacaoEnviando = false;
   avaliacaoConcluida = false;
 
-  el("areaAvaliacao").style.display =
-    "block";
-
-  el("enviarAvaliacao").disabled =
-    true;
+  el("areaAvaliacao").style.display = "block";
+  el("enviarAvaliacao").disabled = true;
 
   el("enviarAvaliacao").textContent =
     "Enviar avaliação";
@@ -1498,9 +1577,7 @@ function atualizarEstrelas() {
   document.querySelectorAll(
     ".estrela"
   ).forEach(botao => {
-    const nota = Number(
-      botao.dataset.nota
-    );
+    const nota = Number(botao.dataset.nota);
 
     botao.classList.toggle(
       "ativa",
@@ -1509,9 +1586,7 @@ function atualizarEstrelas() {
 
     botao.setAttribute(
       "aria-pressed",
-      String(
-        nota === notaSelecionada
-      )
+      String(nota === notaSelecionada)
     );
 
     botao.disabled =
@@ -1528,47 +1603,39 @@ function atualizarEstrelas() {
 document.querySelectorAll(
   ".estrela"
 ).forEach(botao => {
-  botao.addEventListener(
-    "click",
-    () => {
-      if (
-        avaliacaoEnviando ||
-        avaliacaoConcluida
-      ) {
-        return;
-      }
-
-      notaSelecionada = Number(
-        botao.dataset.nota
-      );
-
-      el("mensagemAvaliacao").textContent =
-        "Você selecionou " +
-        notaSelecionada +
-        (
-          notaSelecionada === 1
-            ? " estrela."
-            : " estrelas."
-        );
-
-      atualizarEstrelas();
+  botao.addEventListener("click", () => {
+    if (
+      avaliacaoEnviando ||
+      avaliacaoConcluida
+    ) {
+      return;
     }
-  );
+
+    notaSelecionada = Number(
+      botao.dataset.nota
+    );
+
+    el("mensagemAvaliacao").textContent =
+      "Você selecionou " +
+      notaSelecionada +
+      (notaSelecionada === 1
+        ? " estrela."
+        : " estrelas.");
+
+    atualizarEstrelas();
+  });
 });
 
 el("fecharModal").onclick = () => {
   if (avaliacaoEnviando) return;
 
-  el("modalFundo")
-    .classList.remove("visivel");
-
-  document.body
-    .classList.remove("modalAberto");
+  el("modalFundo").classList.remove("visivel");
+  document.body.classList.remove("modalAberto");
 };
 
 function esperar(ms) {
   return new Promise(
-    resolve => setTimeout(resolve,ms)
+    resolve => setTimeout(resolve, ms)
   );
 }
 
@@ -1579,14 +1646,12 @@ async function verificarPedido(token) {
     tentativa++
   ) {
     await esperar(
-      tentativa === 0
-        ? 2200
-        : 2500
+      tentativa === 0 ? 2200 : 2500
     );
 
     try {
       const d = await jsonp({
-        acao:"confirmacao",
+        acao: "confirmacao",
         token
       });
 
@@ -1616,14 +1681,12 @@ async function verificarAvaliacao(token) {
     tentativa++
   ) {
     await esperar(
-      tentativa === 0
-        ? 1400
-        : 1800
+      tentativa === 0 ? 1400 : 1800
     );
 
     try {
       const d = await jsonp({
-        acao:"status_avaliacao",
+        acao: "status_avaliacao",
         token
       });
 
@@ -1658,20 +1721,19 @@ function gerarToken() {
     crypto.getRandomValues
   ) {
     const b = new Uint8Array(16);
-
     crypto.getRandomValues(b);
 
     b[6] = (b[6] & 15) | 64;
     b[8] = (b[8] & 63) | 128;
 
     const h = [...b].map(
-      n => n.toString(16).padStart(2,"0")
+      n => n.toString(16).padStart(2, "0")
     ).join("");
 
-    return h.slice(0,8) + "-" +
-      h.slice(8,12) + "-" +
-      h.slice(12,16) + "-" +
-      h.slice(16,20) + "-" +
+    return h.slice(0, 8) + "-" +
+      h.slice(8, 12) + "-" +
+      h.slice(12, 16) + "-" +
+      h.slice(16, 20) + "-" +
       h.slice(20);
   }
 
@@ -1684,9 +1746,7 @@ function enviarFormularioOculto(
   dados,
   destino
 ) {
-  const form = document.createElement(
-    "form"
-  );
+  const form = document.createElement("form");
 
   form.method = "POST";
   form.action = SCRIPT_URL;
@@ -1695,10 +1755,8 @@ function enviarFormularioOculto(
   form.style.display = "none";
 
   Object.entries(dados).forEach(
-    ([nome,conteudo]) => {
-      const input = document.createElement(
-        "input"
-      );
+    ([nome, conteudo]) => {
+      const input = document.createElement("input");
 
       input.type = "hidden";
       input.name = nome;
@@ -1729,18 +1787,16 @@ el("pedido").addEventListener(
 
       mostrarResultado(
         "Confirmação pendente",
-        "Existe uma encomenda anterior " +
-        "ainda sem confirmação. " +
-        "Fale conosco pelo WhatsApp " +
-        "antes de enviar novamente.",
+        "Existe uma encomenda anterior ainda " +
+        "sem confirmação. Fale conosco pelo " +
+        "WhatsApp antes de enviar novamente.",
         "⚠️"
       );
 
       return;
     }
 
-    const atualizado =
-      await atualizarLoja();
+    const atualizado = await atualizarLoja();
 
     if (!atualizado || !lojaAberta) {
       alert(
@@ -1749,12 +1805,9 @@ el("pedido").addEventListener(
       return;
     }
 
-    const escolhidos =
-      produtos.filter(
-        p =>
-          p.ativo &&
-          (qtd[p.id] || 0) > 0
-      );
+    const escolhidos = produtos.filter(
+      p => p.ativo && (qtd[p.id] || 0) > 0
+    );
 
     if (!escolhidos.length) {
       alert(
@@ -1763,24 +1816,21 @@ el("pedido").addEventListener(
       return;
     }
 
-    const telefone =
-      valor("telefone")
-        .replace(/\D/g,"");
+    const telefone = valor("telefone")
+      .replace(/\D/g, "");
 
     if (
       telefone.length < 10 ||
       telefone.length > 11
     ) {
-      alert(
-        "Confira o WhatsApp com DDD."
-      );
+      alert("Confira o WhatsApp com DDD.");
       return;
     }
 
     const m = valor("modalidade");
 
-    const cep =
-      valor("cep").replace(/\D/g,"");
+    const cep = valor("cep")
+      .replace(/\D/g, "");
 
     if (
       m === "nossa" &&
@@ -1801,25 +1851,22 @@ el("pedido").addEventListener(
 
     const dados = {
       token,
-      nome:valor("nome"),
+      nome: valor("nome"),
       telefone,
-      modalidade:m,
-      cep:m === "nossa" ? cep : "",
-      rua:m === "nossa"
-        ? valor("rua") : "",
-      numero:m === "nossa"
-        ? valor("numero") : "",
-      complemento:m === "nossa"
+      modalidade: m,
+      cep: m === "nossa" ? cep : "",
+      rua: m === "nossa" ? valor("rua") : "",
+      numero: m === "nossa" ? valor("numero") : "",
+      complemento: m === "nossa"
         ? valor("complemento") : "",
-      bairro:m === "nossa"
-        ? valor("bairro") : "",
-      referencia:m === "nossa"
+      bairro: m === "nossa" ? valor("bairro") : "",
+      referencia: m === "nossa"
         ? valor("referencia") : "",
-      motoboy:m === "motoboy"
+      motoboy: m === "motoboy"
         ? valor("motoboy") : "",
-      obs:valor("obs"),
-      website:valor("website"),
-      quantidades:JSON.stringify(qtd)
+      obs: valor("obs"),
+      website: valor("website"),
+      quantidades: JSON.stringify(qtd)
     };
 
     enviando = true;
@@ -1844,10 +1891,10 @@ el("pedido").addEventListener(
         mostrarResultado(
           "Pedido recebido! 🎉",
           "Agradecemos pela preferência! ❤️ " +
-          "Sua encomenda foi registrada " +
-          "com sucesso. Em breve entraremos " +
-          "em contato para confirmar os " +
-          "detalhes. Aguarde antes de pagar.",
+          "Sua encomenda foi registrada com sucesso. " +
+          "Em breve entraremos em contato para " +
+          "confirmar os detalhes. " +
+          "Aguarde antes de pagar.",
           "✅",
           confirmado.pedido,
           confirmado.previsao
@@ -1868,10 +1915,9 @@ el("pedido").addEventListener(
       } else {
         mostrarResultado(
           "Confirmação pendente",
-          "Não conseguimos confirmar " +
-          "o registro agora. O pedido pode " +
-          "ter sido recebido. Não envie " +
-          "novamente antes de falar conosco.",
+          "Não conseguimos confirmar o registro agora. " +
+          "O pedido pode ter sido recebido. " +
+          "Não envie novamente antes de falar conosco.",
           "⚠️"
         );
 
@@ -1918,9 +1964,9 @@ el("enviarAvaliacao").addEventListener(
 
     try {
       enviarFormularioOculto({
-        acao:"avaliar",
-        token:tokenConfirmado,
-        nota:notaSelecionada
+        acao: "avaliar",
+        token: tokenConfirmado,
+        nota: notaSelecionada
       }, "canalAvaliacao");
 
       const resultado =
@@ -1930,9 +1976,7 @@ el("enviarAvaliacao").addEventListener(
 
       if (resultado) {
         avaliacaoConcluida = true;
-
-        notaSelecionada =
-          Number(resultado.nota);
+        notaSelecionada = Number(resultado.nota);
 
         el("mensagemAvaliacao").textContent =
           "❤️ Muito obrigado! " +
@@ -1943,14 +1987,12 @@ el("enviarAvaliacao").addEventListener(
 
       } else {
         el("mensagemAvaliacao").textContent =
-          "Não conseguimos confirmar " +
-          "a avaliação agora. " +
-          "Ela pode ter sido recebida.";
+          "Não conseguimos confirmar a avaliação " +
+          "agora. Ela pode ter sido recebida.";
 
         el("enviarAvaliacao").textContent =
           "Verificar novamente";
 
-        // Na próxima tentativa, apenas consulta.
         el("enviarAvaliacao").onclick =
           async evento => {
             evento.stopPropagation();
@@ -1961,8 +2003,7 @@ el("enviarAvaliacao").addEventListener(
 
             if (d) {
               avaliacaoConcluida = true;
-              notaSelecionada =
-                Number(d.nota);
+              notaSelecionada = Number(d.nota);
 
               el("mensagemAvaliacao").textContent =
                 "❤️ Avaliação registrada!";
@@ -1995,14 +2036,12 @@ atualizarLoja();
 document.addEventListener(
   "visibilitychange",
   () => {
-    if (
-      !document.hidden &&
-      !enviando
-    ) {
+    if (!document.hidden && !enviando) {
       atualizarLoja();
     }
   }
 );
 </script>
+
 </body>
 </html>
