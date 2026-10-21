@@ -38,35 +38,46 @@ button{cursor:pointer;touch-action:manipulation}
 button:disabled{opacity:.55;cursor:not-allowed}
 h1,h2,h3,h4,strong{font-family:"Nunito",Arial,sans-serif}
 header{
-  text-align:center;
   background:linear-gradient(135deg,#D9F2EC,#FFF4E9,#FCE9E6);
-  padding:18px 14px 24px;
+  padding:12px 24px;
   border-bottom:2px solid #C2E8DF;
+}
+.cabecalhoConteudo{
+  width:100%;
+  max-width:1160px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap:24px;
+  text-align:left;
 }
 .logo{
   display:block;
-  width:clamp(170px,24vw,245px);
+  width:145px;
   height:auto;
-  margin:0 auto 5px;
-  filter:drop-shadow(0 7px 12px #51392F16);
+  flex-shrink:0;
+  filter:drop-shadow(0 5px 9px #51392F16);
 }
+.cabecalhoTexto{min-width:0}
 header h1{
   color:var(--turquesa);
-  font-size:29px;
+  font-size:27px;
   font-weight:900;
-  margin:3px 0;
+  margin:0 0 5px;
 }
 .slogan{
   color:var(--chocolate);
   font-family:"Nunito",Arial,sans-serif;
-  font-size:17px;
+  font-size:16px;
   font-weight:800;
-  margin:6px 0;
+  margin:0 0 4px;
 }
 .subtitulo{
   font-size:13px;
   color:var(--suave);
-  margin:5px 0 0;
+  margin:0;
+  line-height:1.45;
 }
 main{
   max-width:1160px;
@@ -346,10 +357,12 @@ footer p{margin:5px 0}
 }
 body.modalAberto{overflow:hidden}
 @media(max-width:780px){
-  header{padding:13px 12px 19px}
-  .logo{width:175px}
-  header h1{font-size:25px}
-  .slogan{font-size:15px}
+  header{padding:10px 12px}
+  .cabecalhoConteudo{gap:12px}
+  .logo{width:96px}
+  header h1{font-size:20px;line-height:1.2}
+  .slogan{font-size:13px;line-height:1.35}
+  .subtitulo{font-size:11px}
   main{display:block;margin:12px auto;padding:0 10px}
   section{padding:15px;margin-bottom:13px;border-radius:17px}
   h2{font-size:22px}
@@ -399,6 +412,11 @@ body.modalAberto{overflow:hidden}
   .modal{padding:21px 15px}
 }
 @media(max-width:360px){
+  .cabecalhoConteudo{gap:9px}
+  .logo{width:80px}
+  header h1{font-size:17px}
+  .slogan{font-size:12px}
+  .subtitulo{font-size:10px}
   .linha{grid-template-columns:1fr}
   .produto img{height:112px}
   .estrela{min-width:42px;font-size:32px;padding:4px}
@@ -409,14 +427,18 @@ body.modalAberto{overflow:hidden}
 <body>
 
 <header>
-  <img
-    class="logo"
-    src="logo-alebolos.png"
-    alt="Logo Alê Bólos: ursinho confeiteiro com chapéu de cozinheiro"
-  >
-  <h1>Alê Bólos</h1>
-  <p class="slogan">Um carinho em cada pote ❤️</p>
-  <p class="subtitulo">Doces feitos com amor para adoçar seu dia</p>
+  <div class="cabecalhoConteudo">
+    <img
+      class="logo"
+      src="logo-alebolos.png"
+      alt="Logo Alê Bólos: ursinho confeiteiro com chapéu de cozinheiro"
+    >
+    <div class="cabecalhoTexto">
+      <h1>Seja bem-vindo à Alê Bólos!</h1>
+      <p class="slogan">Doces feitos com amor para adoçar seu dia ❤️</p>
+      <p class="subtitulo">Escolha seus favoritos e faça sua encomenda.</p>
+    </div>
+  </div>
 </header>
 
 <main>
